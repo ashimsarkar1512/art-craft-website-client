@@ -1,13 +1,23 @@
+import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
+import { AuthContext } from "../Provider/AuthProviders";
 
 
 const Navbar = () => {
+  const { user, logOut } = useContext(AuthContext)
+
+  const handleSignOut = () => {
+    logOut()
+      .then()
+      .catch()
+  }
 
             const navLinks=<>
-             <li ><NavLink to='/'>Home</NavLink></li>
-               <li ><NavLink to='/all-art' > All Art & craft Items</NavLink></li>
-              <li><NavLink to='/add-craft'>Add Craft Item</NavLink></li>
-              <li><NavLink to='/art-craft-list' >My Art&Craft List</NavLink></li>
+             <li ><NavLink  className={({ isActive }) => (isActive ? 'text-xl text-green-500 font-medium' : 'text-xl text-white font-medium')} to='/'>Home</NavLink></li>
+
+               <li ><NavLink className={({ isActive }) => (isActive ? 'text-xl text-orange-500 font-medium' : 'text-xl text-white font-medium')} to='/all-art' > All Art & craft Items</NavLink></li>
+              <li><NavLink className={({ isActive }) => (isActive ? 'text-xl text-orange-500 font-medium' : 'text-xl text-white font-medium')} to='addCraftItem'>Add Craft Item</NavLink></li>
+              <li><NavLink  className={({ isActive }) => (isActive ? 'text-xl text-orange-500 font-medium' : 'text-xl text-white font-medium')} to='/art-craft-list' >My Art&Craft List</NavLink></li>
               
             </>
             return (
@@ -33,7 +43,22 @@ const Navbar = () => {
     </ul>
   </div>
   <div className="navbar-end">
-     <Link to='/login'><button>Login</button></Link>
+
+  {
+          user?.photoURL ?
+            <div className="flex gap-3 items-center">
+              <div className="dropdown dropdown-hover">
+                <div tabIndex={0} role="button" ><img className="w-8 rounded-full" src={user?.photoURL} alt="" /></div>
+                <ul tabIndex={0} className="dropdown-content z-[1] menu  shadow bg-base-100 rounded w-24">
+                  <li className=" font-bold text-black"><a>{user?.displayName || "user name not found"}</a></li>
+
+                </ul>
+              </div>
+              <button onClick={handleSignOut} className="text-sm p-2 rounded-md border bg-white text-black">signOut</button>
+            </div>
+            :
+            <Link to='/login'><button className="text-sm p-2 rounded-md  border bg-white text-black">Login</button></Link>
+        }
   </div>
 </div>
             );
