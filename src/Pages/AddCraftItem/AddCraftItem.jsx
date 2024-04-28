@@ -21,9 +21,11 @@ const AddCraftItem = () => {
         const time=form.time.value;      
         const status=form.status.value;      
         const image=form.image.value;       
-        const shortDes=form.shortDes.value;   
+        const shortDes=form.shortDes.value; 
+        const email=form.email.value; 
+        const name=form.name.value; 
 
-       const addCraft={item,subcategory,price,rating,customization,time,status,image,shortDes}
+       const addCraft={item,subcategory,price,rating,customization,time,status,image,shortDes,name,email}
         
         console.log(addCraft);
 
@@ -39,6 +41,7 @@ const AddCraftItem = () => {
         .then(data=>{
             console.log(data);
            if(data.insertedId){
+            form.reset()
             Swal.fire({
                 title: 'success!',
                 text: 'art and craft added successfully',
