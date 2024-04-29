@@ -34,7 +34,7 @@ const AddCraftItem = () => {
        
 
 
-        fetch("http://localhost:5000/addCraft",{
+        fetch("https://art-craft-crud-server-b1bua5778-ashim-sarkars-projects.vercel.app/addCraft",{
             method:'POST',
             headers:{
                 'content-type':'application/json'

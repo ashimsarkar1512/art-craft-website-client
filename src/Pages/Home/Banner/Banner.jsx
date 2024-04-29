@@ -9,6 +9,7 @@ import 'swiper/css/navigation';
 
 import './styles.css';
 
+
 // import required modules
 import { Autoplay,  Navigation } from 'swiper/modules';
 
@@ -28,11 +29,17 @@ const Banner = () => {
                             modules={[Autoplay, Navigation]}
                             className="mySwiper"
                           >
-                            <div  className='mt-10'>
-                            <SwiperSlide><img src="https://i.ibb.co/RP6N7NW/pottery-8026824-1280.jpg" alt="" /></SwiperSlide>
-                            <SwiperSlide><img src="https://i.ibb.co/FgwX1Np/fallon-michael-IP59z0-FXBu-Y-unsplash.jpg" alt="" /></SwiperSlide>
-                            <SwiperSlide><img src="https://i.ibb.co/YBVXTYK/blacksmith-2740128-1280.jpg" alt="" /></SwiperSlide>
-                            <SwiperSlide><img src="https://i.ibb.co/6ryPWNC/fishermen-8449951-1280.jpg" alt="" /></SwiperSlide>
+                            <div>
+                           <div>
+                           <SwiperSlide><img src="https://i.ibb.co/yNv6Jkc/pexels-ian-panelo-7036455.jpg" alt="" /></SwiperSlide>
+                           </div>
+                           
+                           
+                           <SwiperSlide><img src="https://i.ibb.co/8jSvGTb/maxresdefault.jpg" alt="" /></SwiperSlide>
+                          
+                          
+                            <SwiperSlide><img src="https://i.ibb.co/zPBXHDd/pexels-steve-1045299.jpg" alt="" /></SwiperSlide>
+                            <SwiperSlide><img src="https://i.ibb.co/H7DCD7W/premium-photo-1673514503535-0ef307e0c588.jpg" alt="" /></SwiperSlide>
                            
                             </div>
                           

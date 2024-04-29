@@ -5,7 +5,7 @@ import { AuthContext } from "../Provider/AuthProviders";
 
 const Navbar = () => {
 
-  const [theme,setTheme]=useState('dark')
+  const [theme,setTheme]=useState('light')
 
  useEffect(()=>{
   localStorage.setItem("theme", theme)

@@ -36,7 +36,7 @@ const Update = () => {
  
 
 
-  fetch(`http://localhost:5000/addCrafts/${_id}`,{
+  fetch(`https://art-craft-crud-server-b1bua5778-ashim-sarkars-projects.vercel.app/addCrafts/${_id}`,{
       method:'PUT',
       headers:{
           'content-type':'application/json'

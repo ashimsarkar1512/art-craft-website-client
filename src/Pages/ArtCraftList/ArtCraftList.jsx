@@ -14,7 +14,7 @@ const ArtCraftList = () => {
              
               
             useEffect(()=>{
-                        fetch(`http://localhost:5000/addCraft/${user?.email}`)
+                        fetch(`https://art-craft-crud-server-b1bua5778-ashim-sarkars-projects.vercel.app/addCraft/${user?.email}`)
                         .then(res=>res.json())
                         .then(data=>{
                                     setItems(data);
@@ -22,7 +22,7 @@ const ArtCraftList = () => {
             },[user])
 
             const handleDelete=id=>{
-                    fetch(`http://localhost:5000/addCraft/${id}`,{
+                    fetch(`https://art-craft-crud-server-b1bua5778-ashim-sarkars-projects.vercel.app/addCraft/${id}`,{
 
                     method:'DELETE'
 

@@ -72,8 +72,8 @@ const Login = () => {
                             <h1 className="text-2xl font-bold text-center text-green-500 my-5">Log in to your account</h1>
                             <div className='w-full lg:w-[75%] mx-auto '>
                                 <form  onSubmit={handleLogin} className='space-y-10'>
-                                    <input className='block w-full rounded outline-none border-b-2 focus:border-orange-500 p-2' type="email" name="email" id="" placeholder='Email' />
-                                    <input className='block w-full rounded outline-none border-b-2 focus:border-orange-500 p-2' type="password" name="password" id="" placeholder='Password' />
+                                    <input className='block w-full rounded outline-none border-b-2 focus:border-orange-500 p-2' type="email" name="email" id="" placeholder='Email' required />
+                                    <input className='block w-full rounded outline-none border-b-2 focus:border-orange-500 p-2' type="password" name="password" id="" placeholder='Password' required />
                                     <button className='btn w-full text-white bg-green-600 '>Log in</button>
                                 </form>
                                 < hr className='my-5' />

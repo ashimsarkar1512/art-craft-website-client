@@ -9,7 +9,9 @@ const Home = () => {
 
             return (
                         <div>
-                              <Banner></Banner>  
+                              <div className="mt-2">
+                              <Banner></Banner> 
+                              </div> 
 
                               <div className="
                         grid grid-cols-1 bg-gray-100 md:grid-cols-3 p-7 gap-10">
