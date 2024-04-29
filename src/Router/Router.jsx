@@ -9,6 +9,7 @@ import ArtCraftDetails from "../Pages/ArtCraftDetails/ArtCraftDetails";
 import PrivateRoute from "./PrivateRout/PrivateRoute";
 import AllArtCraftItems from "../Pages/AllArtCraftItems/AllArtCraftItems";
 import ArtCraftList from "../Pages/ArtCraftList/ArtCraftList";
+import Update from "../Pages/Update/Update";
 
 const router = createBrowserRouter([
             {
@@ -46,6 +47,10 @@ const router = createBrowserRouter([
                         {
                           path:'/artCraftList',
                           element:<ArtCraftList></ArtCraftList>
+                        },
+                        {
+                          path:'/update',
+                          element:<Update></Update>
                         }
               ]
             },
