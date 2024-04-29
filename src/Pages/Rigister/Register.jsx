@@ -5,6 +5,7 @@ import { useContext, useState } from "react";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { FaEye, FaEyeSlash } from "react-icons/fa";
+import { updateProfile } from "firebase/auth";
 
 
 
@@ -41,7 +42,11 @@ const Register = () => {
           setRegisterError('')
           setSuccess(' ')
            createUser(email,password)
-           .then(()=>{
+           .then((result)=>{
+            updateProfile(result.user,{
+              displayName:name,
+              photoURL:photoURL
+          })
             setSuccess(toast.success('register successfully'))
            })
            .catch(error=>{

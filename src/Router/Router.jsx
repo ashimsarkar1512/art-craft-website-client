@@ -7,6 +7,8 @@ import Register from "../Pages/Rigister/Register";
 import AddCraftItem from "../Pages/AddCraftItem/AddCraftItem";
 import ArtCraftDetails from "../Pages/ArtCraftDetails/ArtCraftDetails";
 import PrivateRoute from "./PrivateRout/PrivateRoute";
+import AllArtCraftItems from "../Pages/AllArtCraftItems/AllArtCraftItems";
+import ArtCraftList from "../Pages/ArtCraftList/ArtCraftList";
 
 const router = createBrowserRouter([
             {
@@ -29,12 +31,21 @@ const router = createBrowserRouter([
                         },
                         {
                           path:'/addCraftItem',
-                          element:<AddCraftItem></AddCraftItem>
+                          element:<PrivateRoute><AddCraftItem></AddCraftItem></PrivateRoute>
                         },
                         {
                           path:'/artCraftDetails/:id',
                           element:<PrivateRoute><ArtCraftDetails></ArtCraftDetails></PrivateRoute>,
                           loader:()=>fetch('http://localhost:5000/addCraft')
+                        },
+                        {
+                          path:'/artCraftItem',
+                          element:<AllArtCraftItems></AllArtCraftItems>,
+                          loader:()=>fetch('http://localhost:5000/addCraft')
+                        },
+                        {
+                          path:'/artCraftList',
+                          element:<ArtCraftList></ArtCraftList>
                         }
               ]
             },
