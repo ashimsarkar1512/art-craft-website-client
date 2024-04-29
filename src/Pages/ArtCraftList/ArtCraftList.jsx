@@ -1,6 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../Provider/AuthProviders";
-import { Link } from "react-router-dom";
+import { Link, } from "react-router-dom";
+import Swal from "sweetalert2";
 
 
 const ArtCraftList = () => {
@@ -29,7 +30,23 @@ const ArtCraftList = () => {
                     .then(res=>res.json())
                     .then(data=>{
                         if(data.deletedCount>0){
-                                    console.log('delete successfully');
+                          Swal.fire({
+                            title: "Are you sure?",
+                            text: "You won't be able to revert this!",
+                            icon: "warning",
+                            showCancelButton: true,
+                            confirmButtonColor: "#3085d6",
+                            cancelButtonColor: "#d33",
+                            confirmButtonText: "Yes, delete it!"
+                          }).then((result) => {
+                            if (result.isConfirmed) {
+                              Swal.fire({
+                                title: "Deleted!",
+                                text: "Your file has been deleted.",
+                                icon: "success"
+                              });
+                            }
+                          });
 
                                     const remainingUsers=items.filter(user=>user._id !==id)
                                     setItems(remainingUsers)
@@ -58,7 +75,7 @@ const ArtCraftList = () => {
     </div>
     <div className="flex gap-10 ">
             <button onClick={()=>handleDelete(item._id)} className="bg-red-800 text-black py-2 px-4 rounded-md">Delete</button>
-           <Link to='/update'> <button className="bg-green-700 text-black py-2 px-3 rounded-md">Update</button></Link>
+           <Link to={`/update/${item._id}`}> <button className="bg-green-700 text-black py-2 px-3 rounded-md">Update</button></Link>
     </div>
     
   </div>
