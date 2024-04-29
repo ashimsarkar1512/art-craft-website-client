@@ -10,13 +10,32 @@ const ArtCraftList = () => {
 
               const [items,setItems]=useState([])
 
+             
+              
             useEffect(()=>{
-                        fetch(`http://localhost:5000/addCraft/${user.email}`)
+                        fetch(`http://localhost:5000/addCraft/${user?.email}`)
                         .then(res=>res.json())
                         .then(data=>{
                                     setItems(data);
                         })
             },[user])
+
+            const handleDelete=id=>{
+                    fetch(`http://localhost:5000/addCraft/${id}`,{
+
+                    method:'DELETE'
+
+                    })
+                    .then(res=>res.json())
+                    .then(data=>{
+                        if(data.deletedCount>0){
+                                    console.log('delete successfully');
+
+                                    const remainingUsers=items.filter(user=>user._id !==id)
+                                    setItems(remainingUsers)
+                        }
+                    })
+            }
 
             return (
                         <div  className="
@@ -38,7 +57,7 @@ const ArtCraftList = () => {
            <p> status: {item.status}</p>
     </div>
     <div className="flex gap-10 ">
-            <button className="bg-red-800 text-black py-2 px-4 rounded-md">Delete</button>
+            <button onClick={()=>handleDelete(item._id)} className="bg-red-800 text-black py-2 px-4 rounded-md">Delete</button>
            <Link to='/update'> <button className="bg-green-700 text-black py-2 px-3 rounded-md">Update</button></Link>
     </div>
     

@@ -46,7 +46,8 @@ const router = createBrowserRouter([
                         },
                         {
                           path:'/artCraftList',
-                          element:<ArtCraftList></ArtCraftList>
+                          element:<ArtCraftList></ArtCraftList>,
+                          loader:()=>fetch('http://localhost:5000/addCraft')
                         },
                         {
                           path:'/update',
