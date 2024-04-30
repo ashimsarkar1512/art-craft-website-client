@@ -4,6 +4,7 @@ import CraftItems from "./CraftItems/CraftItems";
 import Collection from "./collection/Collection";
 import { Helmet } from "react-helmet";
 import ArtCraftCategory from "./ArtCraftCategory/ArtCraftCategory";
+import DigitalExteria from "./DigitalExteria/DigitalExteria";
 
 
 
@@ -33,6 +34,7 @@ const Home = () => {
              <ArtCraftCategory></ArtCraftCategory>
             
             <Collection></Collection>
+            <DigitalExteria></DigitalExteria>
                         </div>
             );
 };

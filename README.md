@@ -1,8 +1,16 @@
-# React + Vite
+website name:ArtisticAlchemy 
+live link: 
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Featured and characteristics
 
-Currently, two official plugins are available:
+*  At first user can see the home page in this website.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+*  Then user click the the navbar login button and he/she could see the     login page form end at the page have to register button then user click this write the register then open the register page and create the account in register page .
+
+* User will go the login page and use to right email,password or google and github will login then will see the success toast massage.
+
+* addCraft item ,my art and craft list and view details page is protected user can see the pages when she/he logged in this website 
+
+* only can user create the art craft item card because the page protected
+
+npm package: 1.lottie React. 2.React-simple-typewriter. 3.React Awesome reveal.

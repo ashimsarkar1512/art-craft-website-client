@@ -8,7 +8,7 @@ const ArtCraftCategory = () => {
             
 
              useEffect(()=>{
-                    fetch("http://localhost:5000/artCategory")
+                    fetch("https://art-craft-crud-server.vercel.app/artCategory")
                     .then(res=>res.json())
                     .then(data=>{
                         setCategory(data)
