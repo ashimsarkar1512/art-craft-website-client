@@ -61,7 +61,7 @@ const AddCraftItem = () => {
 
 
             return (
-                        <div> <div className="w-[80%] mx-auto ">
+                        <div> <div className="w-[80%] mx-auto my-10 ">
                             <h1 className="text-3xl font-semibold
                              text-blue-700 text-center my-3">Add Craft Item</h1>
                         <form  onSubmit={handleAddCraft} >

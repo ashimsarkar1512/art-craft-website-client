@@ -1,6 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../Provider/AuthProviders";
+import { Typewriter } from 'react-simple-typewriter'
 
 
 const Navbar = () => {
@@ -52,7 +53,19 @@ const Navbar = () => {
       }
       </ul>
     </div>
-    <a className="btn btn-ghost text-xl dark:text-primary gap-0">Artistic <span className="text-yellow-500">Alchemy</span></a>
+    <a className="btn btn-ghost text-2xl  font-bold dark:text-primary gap-0">Artistic <span className="text-orange-600">
+      <Typewriter
+       words={[' Alchemy', ' Alchemy', ' Alchemy']}
+       loop={false}
+       cursor
+       cursorStyle=''
+       typeSpeed={70}
+       deleteSpeed={50}
+       delaySpeed={1000}>
+        
+      </Typewriter>
+      
+     </span></a>
   </div>
   <div className="navbar-center hidden lg:flex">
     <ul className="menu menu-horizontal px-1">

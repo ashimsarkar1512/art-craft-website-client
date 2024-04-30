@@ -20,7 +20,8 @@ const router = createBrowserRouter([
                         {
                                     path:'/',
                                     element:<Home></Home>,
-                                    loader:()=>fetch('https://art-craft-crud-server.vercel.app/addCraft')
+                                    loader:()=>fetch('https://art-craft-crud-server.vercel.app/addCraft'),
+                                   
                         },
                         {
                                     path:'/login',
@@ -53,7 +54,9 @@ const router = createBrowserRouter([
                           path:'/update/:id',
                           element:<Update></Update>,
                           loader:({params})=>fetch(`https://art-craft-crud-server.vercel.app/addCrafts/${params.id}`)
-                        }
+                        },
+
+                        
               ]
             },
           ]);
