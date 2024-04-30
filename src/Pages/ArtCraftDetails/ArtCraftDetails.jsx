@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Helmet } from "react-helmet";
 import { useLoaderData, useParams } from "react-router-dom";
 
 
@@ -17,6 +18,10 @@ const ArtCraftDetails = () => {
       const{subcategory,price,rating,customization,time,status,image,shortDes,name,email,_id}=details
             return (
                         <section className=" dark:text-gray-800">
+                               <Helmet>
+                <title>ArtCraftDetails</title>
+            </Helmet>
+
                  
                   <div className="container max-w-6xl my-10 mx-auto space-y-6 sm:space-y-12">
                         < a rel="noopener noreferrer" href="#" className="block max-w-sm gap-3 mx-auto sm:max-w-full group hover:no-underline focus:no-underline lg:grid lg:grid-cols-12 dark:bg-gray-50">

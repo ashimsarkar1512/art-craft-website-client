@@ -1,10 +1,10 @@
-
+import { Fade } from "react-awesome-reveal";
 
 const Collection = () => {
             return (
                        <div  className="my-16 max-w-6xl mx-auto">
                              <h2 className="text-5xl font-semibold text-primary my-10">Explore by Medium</h2>
-
+ <Fade direction="down" triggerOnce={false}>
 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10 ">
 
                                     
@@ -68,6 +68,7 @@ const Collection = () => {
 
 
 </div>
+</Fade>
                        </div>
             );
 };

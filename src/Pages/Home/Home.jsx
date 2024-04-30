@@ -2,7 +2,9 @@ import {  useLoaderData } from "react-router-dom";
 import Banner from "./Banner/Banner";
 import CraftItems from "./CraftItems/CraftItems";
 import Collection from "./collection/Collection";
+import { Helmet } from "react-helmet";
 import ArtCraftCategory from "./ArtCraftCategory/ArtCraftCategory";
+
 
 
 const Home = () => {
@@ -11,6 +13,10 @@ const Home = () => {
 
             return (
                         <div>
+                               <Helmet>
+                                 <title>Home</title>
+                                 </Helmet>
+
                               <div className="mt-2">
                               <Banner></Banner> 
                               </div> 
@@ -24,7 +30,7 @@ const Home = () => {
                 }
             </div>
 
-             
+             <ArtCraftCategory></ArtCraftCategory>
             
             <Collection></Collection>
                         </div>

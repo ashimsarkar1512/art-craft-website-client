@@ -2,6 +2,7 @@ import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../Provider/AuthProviders";
 import { Link,  } from "react-router-dom";
 import Swal from "sweetalert2";
+import { Helmet } from "react-helmet";
 
 
 const ArtCraftList = () => {
@@ -61,6 +62,10 @@ const ArtCraftList = () => {
 
             return (
                       <div>
+                         <Helmet>
+                <title>ArtCraftList</title>
+            </Helmet>
+
                         <div className=" mx-auto flex justify-center my-5">
                         <select className="rounded outline-none border-b-2 focus:border-blue-500 text-green-700  p-2" placeholder="Customization" name="customization" id="">customization
                             <option disabled selected >Customization</option>

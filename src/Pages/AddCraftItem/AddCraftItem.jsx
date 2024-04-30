@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { AuthContext } from "../../Provider/AuthProviders";
 import Swal from 'sweetalert2'
+import { Helmet } from "react-helmet";
 
 
 
@@ -62,6 +63,10 @@ const AddCraftItem = () => {
 
             return (
                         <div> <div className="w-[80%] mx-auto my-10 ">
+                             <Helmet>
+                            <title>AddCraftItem</title>
+                                 </Helmet>
+
                             <h1 className="text-3xl font-semibold
                              text-blue-700 text-center my-3">Add Craft Item</h1>
                         <form  onSubmit={handleAddCraft} >
