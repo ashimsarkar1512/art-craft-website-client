@@ -1,6 +1,6 @@
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../Provider/AuthProviders";
-import { Link, } from "react-router-dom";
+import { Link, useLoaderData, } from "react-router-dom";
 import Swal from "sweetalert2";
 
 
@@ -14,39 +14,44 @@ const ArtCraftList = () => {
              
               
             useEffect(()=>{
-                        fetch(`https://art-craft-crud-server-b1bua5778-ashim-sarkars-projects.vercel.app/addCraft/${user?.email}`)
+                        fetch(`https://art-craft-crud-server.vercel.app/addCraft/${user?.email}`)
                         .then(res=>res.json())
                         .then(data=>{
                                     setItems(data);
                         })
             },[user])
 
+            
+
             const handleDelete=id=>{
-                    fetch(`https://art-craft-crud-server-b1bua5778-ashim-sarkars-projects.vercel.app/addCraft/${id}`,{
 
-                    method:'DELETE'
 
-                    })
-                    .then(res=>res.json())
-                    .then(data=>{
-                        if(data.deletedCount>0){
-                          Swal.fire({
-                            title: "Are you sure?",
-                            text: "You won't be able to revert this!",
-                            icon: "warning",
-                            showCancelButton: true,
-                            confirmButtonColor: "#3085d6",
-                            cancelButtonColor: "#d33",
-                            confirmButtonText: "Yes, delete it!"
-                          }).then((result) => {
-                            if (result.isConfirmed) {
-                              Swal.fire({
-                                title: "Deleted!",
-                                text: "Your file has been deleted.",
-                                icon: "success"
-                              });
-                            }
-                          });
+              Swal.fire({
+                title: "Are you sure?",
+                text: "You won't be able to revert this!",
+                icon: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#3085d6",
+                cancelButtonColor: "#d33",
+                confirmButtonText: "Yes, delete it!"
+              }).then((result) => {
+                if (result.isConfirmed) {
+                  fetch(`https://art-craft-crud-server.vercel.app/addCraft/${id}`,{
+
+                  method:'DELETE'
+
+                  })
+                  .then(res=>res.json())
+                  .then(data=>{
+                      if(data.deletedCount>0){
+                        Swal.fire({
+                          title: "Deleted!",
+                          text: "Your file has been deleted.",
+                          icon: "success"
+                        });
+                }
+              });
+                    
 
                                     const remainingUsers=items.filter(user=>user._id !==id)
                                     setItems(remainingUsers)
@@ -55,7 +60,16 @@ const ArtCraftList = () => {
             }
 
             return (
-                        <div  className="
+                      <div>
+                        <div className=" mx-auto flex justify-center my-5">
+                        <select className="rounded outline-none border-b-2 focus:border-blue-500 text-green-700  p-2" placeholder="Customization" name="customization" id="">customization
+                            <option disabled selected >Customization</option>
+                                <option value="Yes">Yes</option>
+                                <option value="No">No</option>
+                               
+                            </select>
+                        </div>
+                          <div  className="
                         grid grid-cols-1 bg-gray-100 md:grid-cols-3 p-7 gap-10">
                                {
                                     items?.map(item=>(
@@ -83,6 +97,7 @@ const ArtCraftList = () => {
                                     ))
                                }
                         </div>
+                      </div>
             );
 };
 

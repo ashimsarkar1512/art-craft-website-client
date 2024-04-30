@@ -1,6 +1,7 @@
 import {  useLoaderData } from "react-router-dom";
 import Banner from "./Banner/Banner";
 import CraftItems from "./CraftItems/CraftItems";
+import Collection from "./collection/Collection";
 
 
 const Home = () => {
@@ -21,6 +22,7 @@ const Home = () => {
                     )
                 }
             </div>
+            <Collection></Collection>
                         </div>
             );
 };
