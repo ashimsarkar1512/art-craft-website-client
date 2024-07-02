@@ -1,5 +1,9 @@
 website name:ArtisticAlchemy 
+<br/>
+
 live link: https://art-craft-auth-d3ad3.web.app
+
+server-link:https://github.com/ashimsarkar1512/art-craft-website-server
 
 Featured and characteristics
 
@@ -14,3 +18,10 @@ Featured and characteristics
 * only can user create the art craft item card because the page protected
 
 npm package: 1.lottie React. 2.React-simple-typewriter. 3.React Awesome reveal.
+
+Technology used:
+<br/>
+
+javascript,React,tailwind,daisyuI,html,css,mongodb,express.js,node.js,firebase,vercel
+
+
