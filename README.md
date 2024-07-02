@@ -4,6 +4,11 @@ website name:ArtisticAlchemy
 live link: https://art-craft-auth-d3ad3.web.app
 
 server-link:https://github.com/ashimsarkar1512/art-craft-website-server
+<br/>
+
+Overview:
+<br/>
+Users first see the home page and can navigate to the login page from the navbar, where they can access the registration page to create an account. After logging in with email, password, Google, or GitHub, they see a success toast message. Protected pages like "Add Craft Item," "My Art and Craft List," and "View Details" are only accessible to logged-in users, who can create art craft item cards.
 
 Featured and characteristics
 
