@@ -12,11 +12,12 @@ node_modules
 dist
 dist-ssr
 
-# Environment
-.env.*.local
-
-# Local files
-*.local
+# Environment (IMPORTANT)
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
 
 # Editor
 .vscode/*
@@ -28,7 +29,3 @@ dist-ssr
 
 # TypeScript / misc
 *.tsbuildinfo
-
-temp_auto_push.bat
-temp_interactive_push.bat
-config.bat
